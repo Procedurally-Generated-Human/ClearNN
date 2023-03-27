@@ -23,3 +23,10 @@ class Sigmoid(ActivationFunction):
     @staticmethod
     def __call__(x):
         return 1/(1+ np.exp(x))
+
+
+class Linear(ActivationFunction):
+    
+    @staticmethod
+    def __call__(x):
+        return x

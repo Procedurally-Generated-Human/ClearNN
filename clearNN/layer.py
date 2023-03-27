@@ -1,8 +1,9 @@
 import numpy as np
+from .functions import ActivationFunction
 
 class Layer:
 
-    def __init__(self, size:int, feature_size:int, activation_function:str):
+    def __init__(self, size:int, feature_size:int, activation_function:ActivationFunction):
         self.size = size
         self.feature_size = feature_size
         self.activation_function = activation_function
@@ -11,4 +12,4 @@ class Layer:
     
 
     def calculate(self, input):
-        return np.dot(input, self.w) + self.b
+        return self.activation_function(np.dot(input, self.w) + self.b)
