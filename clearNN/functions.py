@@ -30,3 +30,10 @@ class Linear(ActivationFunction):
     @staticmethod
     def __call__(x):
         return x
+
+
+class Softmax(ActivationFunction):
+    @staticmethod
+    def __call__(x):
+        e_x = np.exp(x - np.max(x))
+        return e_x / e_x.sum()
